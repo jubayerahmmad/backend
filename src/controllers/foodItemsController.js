@@ -16,6 +16,17 @@ export const addFood = async (req, res) => {
 
 // Get
 export const getFoods = async (req, res) => {
-  const foods = await Food.find();
-  res.json(foods);
+  try {
+    const { category } = req.query;
+
+    let query = {};
+    if (category) {
+      query.category = category;
+    }
+
+    const foods = await Food.find(query);
+    res.status(200).json(foods);
+  } catch (error) {
+    res.status(500).json({ message: "Server Error" });
+  }
 };
