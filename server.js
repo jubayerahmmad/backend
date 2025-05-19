@@ -1,7 +1,8 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import connectDB from "./config/db.js";
+import connectDB from "./src/config/db.js";
+import foodRoutes from "./src/routes/foodRoutes.js";
 
 dotenv.config();
 
@@ -13,6 +14,11 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.use("/foods", foodRoutes);
+
+app.get("/", () => {
+  console.log("Hello from the Server");
+});
 
 // DB connection & server start
 connectDB().then(() => {
