@@ -100,8 +100,7 @@ http://localhost:5000/foods
         "image": "https://example.com/pizza.jpg",
         "createdAt": "...",
         "updatedAt": "..."
-      },
-      ...
+      }
     ]
     ```
 
