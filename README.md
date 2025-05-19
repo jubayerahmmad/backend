@@ -46,7 +46,7 @@ This project allows you to add and retrieve food items. Each food item includes 
 ### Base URL
 
 ```
-http://localhost:5000/foods
+https://food-apis-iaz0.onrender.com
 ```
 
 ### Routes
