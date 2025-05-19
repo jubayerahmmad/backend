@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./src/config/db.js";
 import foodRoutes from "./src/routes/foodRoutes.js";
+import categoryRoutes from "./src/routes/categoryRoutes.js";
 
 dotenv.config();
 
@@ -19,6 +20,8 @@ app.use(express.json());
 
 // Routes
 app.use("/foods", foodRoutes);
+
+app.use("/category", categoryRoutes);
 
 app.get("/", () => {
   console.log("Hello from the Server");
